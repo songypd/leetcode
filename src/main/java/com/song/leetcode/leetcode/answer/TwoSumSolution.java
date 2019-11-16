@@ -1,4 +1,4 @@
-package com.song.leetcode.leetcode;
+package com.song.leetcode.leetcode.answer;
 
 /**
  * @ClassName TwoSumSolution
@@ -8,10 +8,34 @@ package com.song.leetcode.leetcode;
  * @Version 1.0.0
  */
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
+
+
+public class TwoSumSolution {
+
+    public static int[] twoSum(int[] nums, int target) {
+        int pre = 0;
+        Map<Integer, Integer> map = new HashMap();
+        for (int i = 0; i <= nums.length - 1; i++) {
+            map.put(nums[i], i);
+        }
+        for (int i = 0; i <= nums.length - 1; i++) {
+            if (map.containsKey(target - nums[i])&&map.get(target-nums[i])!= i) {
+                pre = i;
+                break;
+            }
+        }
+        int[] res = {pre, map.get(target - nums[pre])};
+        return res;
+    }
+
+    public static void main(String[]args){
+        int[] nums = {3,2,4};
+        int target = 6;
+        twoSum(nums,target);
+    }
+}
 
 /**
  * 给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
@@ -29,33 +53,6 @@ import java.util.stream.Collectors;
  * 链接：https://leetcode-cn.com/problems/two-sum
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-public class TwoSumSolution {
-
-    public static int[] twoSum(int[] nums, int target) {
-        int pre = 0;
-        int end = 0;
-        Map<Integer, Integer> map = new HashMap();
-        for (int i = 0; i <= nums.length - 1; i++) {
-            map.put(nums[i], i);
-        }
-        for (int i = 0; i <= nums.length - 1; i++) {
-            if (map.containsKey(target - nums[i])&&map.get(target-nums[i])!= i) {
-                pre = i;
-                break;
-            }
-        }
-        int[] res = {pre, map.get(target - nums[pre])};
-
-
-        return res;
-    }
-
-    public static void main(String[]args){
-        int[] nums = {3,2,4};
-        int target = 6;
-        twoSum(nums,target);
-    }
-}
 /**
  * res
  * 执行用时 :4 ms , 在所有 java 提交中击败了86.50% 的用户
