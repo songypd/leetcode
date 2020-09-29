@@ -1,2 +1,3 @@
-# leetcode
-leetcode解答
+# learing
+学习笔记
+
