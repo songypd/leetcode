@@ -39,5 +39,7 @@ public class ClassLoadertest {
      *     默认初始化实例
      *  而ClassLoader.getSystemClassLoader() 仅仅是将。class文件加载到jvm中
      *
+     * 类加载的过程
+     * 解析-》验证-》准备-》解析-》初始化-》使用-》卸载
      */
 }
