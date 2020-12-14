@@ -1,4 +1,4 @@
-package com.song.leetcode.leetcode.answer;
+package com.song.leetcode.answer;
 
 /**
  * @ClassName MergeOrderlyList

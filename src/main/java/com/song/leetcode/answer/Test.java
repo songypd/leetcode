@@ -1,4 +1,4 @@
-package com.song.leetcode.leetcode.answer;
+package com.song.leetcode.answer;
 
 import lombok.extern.slf4j.Slf4j;
 

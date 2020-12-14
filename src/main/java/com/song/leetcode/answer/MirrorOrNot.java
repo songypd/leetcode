@@ -1,6 +1,4 @@
-package com.song.leetcode.leetcode.answer;
-
-import javax.swing.tree.TreeNode;
+package com.song.leetcode.answer;
 
 /**
  * @ClassName MirrorOrNot
