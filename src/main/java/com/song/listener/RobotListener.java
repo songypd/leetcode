@@ -10,4 +10,8 @@ public interface RobotListener {
     void working(Event event);
 
     void dancing(Event event);
+
+    void working();
+
+    void dancing();
 }
