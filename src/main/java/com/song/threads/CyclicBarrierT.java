@@ -21,20 +21,17 @@ private static ExecutorService service = Executors.newFixedThreadPool(5);
 
 
         for (int i = 0;i<5;i++){
-            executorService.submit(new Runnable() {
-                @Override
-                public void run() {
-                    System.out.println(Thread.currentThread().getName()+"学员准备好了");
-                    try {
-                        cyclicBarrier.await();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    } catch (BrokenBarrierException e) {
-                        e.printStackTrace();
-                    }
-                    System.out.println(Thread.currentThread().getName()+"学生到le");
-
+            executorService.submit(() -> {
+                System.out.println(Thread.currentThread().getName()+"学员准备好了");
+                try {
+                    cyclicBarrier.await();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (BrokenBarrierException e) {
+                    e.printStackTrace();
                 }
+                System.out.println(Thread.currentThread().getName()+"学生到le");
+
             });
         }
 
@@ -46,24 +43,20 @@ private static ExecutorService service = Executors.newFixedThreadPool(5);
         }
 
         for (int i = 0;i<5;i++){
-            service.submit(new Runnable() {
-                @Override
-                public void run() {
-                    System.out.println(Thread.currentThread().getName()+"老师准备好了");
-                    try {
-                        cyclicBarrier.await();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    } catch (BrokenBarrierException e) {
-                        e.printStackTrace();
-                    }
-                    System.out.println(Thread.currentThread().getName()+"老师到了");
-
+            service.submit(() -> {
+                System.out.println(Thread.currentThread().getName()+"老师准备好了");
+                try {
+                    cyclicBarrier.await();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (BrokenBarrierException e) {
+                    e.printStackTrace();
                 }
+                System.out.println(Thread.currentThread().getName()+"老师到了");
+
             });
         }
 
-//        System.out.println("老师到齐了");
         System.out.println("开始开会");
 
         service.shutdown();
