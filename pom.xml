@@ -19,7 +19,7 @@
         <zookeeper.version>3.6.0</zookeeper.version>
         <zkclient.version>0.1</zkclient.version>
         <!--<curator.version>5.1.0</curator.version>-->
-        <curator.version>5.1.1-SNAPSHOT</curator.version>
+        <curator.version>5.1.0</curator.version>
     </properties>
 
     <dependencies>
