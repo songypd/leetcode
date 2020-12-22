@@ -32,9 +32,9 @@ public class ZkTets1 implements Watcher {
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        ZkTets1 zk = new ZkTets1("127.0.0.1:2181");
+        ZkTets1 zk = new ZkTets1("127.0.0.2:2181");
         zk.startZk();
-        Thread.sleep(10000);
+//        Thread.sleep(10000);
 
     }
 }
