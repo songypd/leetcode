@@ -1,5 +1,6 @@
 package com.song.defalutT;
 
+import com.google.common.collect.Maps;
 import lombok.Data;
 import org.assertj.core.util.Lists;
 import org.junit.Assert;
@@ -37,7 +38,18 @@ public class DT {
         Map<Integer, List<field>> collect3 = clazzes.stream().collect(groupingBy(clazz::getCode, mapping(clazz::getField, toList())));
         String nameAdd = clazzes.stream().map(clazz::getName).collect(joining(",", "[", "]"));
 
+
+        clazz c = new clazz();
+        Map<Integer, clazz> demoMap = Maps.newHashMap();
+        clazz z = demoMap.computeIfAbsent(c.getCode(), this::getClazzFromDb);
     }
+
+    protected clazz getClazzFromDb(Integer code){
+        return new clazz();
+    }
+
+
+
 }
 
 @Data
