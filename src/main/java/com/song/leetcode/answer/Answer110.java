@@ -7,31 +7,26 @@ package com.song.leetcode.answer;
  * @Date 2020-12-21 12:54
  */
 public class Answer110 {
-    public boolean isBalanced(TreeNode1 root) {
+    public boolean isBalanced(TreeNode root) {
+        if (root == null){
+            return true;
+        }else{
+            //Math.abs取绝对值
+            return Math.abs(getHeight(root.left) - getHeight(root.right)) <=1 &isBalanced(root.right) &isBalanced(root.left);
+        }
+    }
 
-        return true;
+    private int getHeight(TreeNode root){
+        if (root == null){
+            return 0;
+        }else{
+            return Math.max(getHeight(root.left),getHeight(root.right))+1;
+        }
     }
 
 }
 
- class TreeNode1 {
-    int val;
-    TreeNode left;
-    TreeNode right;
 
-    TreeNode1() {
-    }
-
-    TreeNode1(int val) {
-        this.val = val;
-    }
-
-    TreeNode1(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
 /**
  * 给定一个二叉树，判断它是否是高度平衡的二叉树。
  * <p>
