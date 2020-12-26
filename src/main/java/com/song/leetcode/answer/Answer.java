@@ -39,8 +39,20 @@ public class Answer {
      */
     private void deleteSame(ListNode2 head) {
         ListNode2 node = head;
+        ListNode2 tail = head;
+        boolean stop = false;
+        while (tail.getNext() !=null){
+            tail.setNext(tail.getNext().getNext());
+        }
 
-        while (node != null&&node.getNext() != null) {
+        while (tail != null&&tail.getBefore() != null && !stop) {
+            if (tail.getVal() == tail.getBefore().getVal()) {
+                tail.setBefore(tail.getBefore().getBefore());
+            }
+            tail = tail.getNext();
+        }
+
+        while (node != null&&node.getNext() != null && !stop) {
             if (node.getVal() == node.getNext().getVal()) {
                 node.setNext(node.getNext().getNext());
             }
@@ -48,7 +60,6 @@ public class Answer {
         }
 
 
-        node.setBefore(node.getBefore().getBefore());
     }
 
 
