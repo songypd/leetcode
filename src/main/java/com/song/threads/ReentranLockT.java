@@ -1,5 +1,6 @@
 package com.song.threads;
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -46,7 +47,7 @@ public class ReentranLockT {
      * @param fair {@code true} if this lock should use a fair ordering policy
      */
 //    private static final Lock lock = new ReentrantLock(true);
-    private static final Lock lock = new ReentrantLock(false);
+    private static final Lock lock = new ReentrantLock(true);
 
     public static void main(String[] args) {
         new Thread(()->test(),"线程a").start();
@@ -61,9 +62,9 @@ public class ReentranLockT {
         for (int i= 0;i < 3;i++){
             try{
                 lock.lock();
-                System.out.println(Thread.currentThread().getName()+"获得到了锁");
-                Thread.sleep(100);
-//                TimeUnit.SECONDS.sleep(1);
+                System.out.print(Thread.currentThread().getName()+"获得到了锁\n");
+//                Thread.sleep(100);
+                TimeUnit.SECONDS.sleep(1);
             }catch(Exception ex){
                 ex.printStackTrace();
             }finally {

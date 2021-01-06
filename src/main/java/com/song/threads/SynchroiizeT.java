@@ -17,4 +17,11 @@ public class SynchroiizeT {
     public static  synchronized void t2(){
         System.out.println("t2");
     }
+
+    
+
+
+
+
+
 }
