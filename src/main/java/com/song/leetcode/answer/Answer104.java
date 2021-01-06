@@ -1,5 +1,9 @@
 package com.song.leetcode.answer;
 
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * @ClassName Answer104
  * @Description Valar Morghulis.Valar Dohaeris
@@ -11,6 +15,32 @@ public class Answer104 {
 
         return root == null ? 0:Math.max(maxDepth(root.left),maxDepth(root.right))+1;
     }
+
+    public int maxDepthV2(TreeNode root) {
+        AtomicInteger depth = new AtomicInteger(0);
+        if (root== null){
+            return depth.get();
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()){
+            int size= queue.size();
+            for (int i = 0;i<size;i++){
+                TreeNode node = queue.poll();
+                if (node.left != null){
+                    queue.offer(node.left);
+                }
+                if (node.right != null){
+                    queue.offer(node.right);
+                }
+            }
+            depth.incrementAndGet();
+
+        }
+        return depth.get();
+    }
+
+
 }
 
 
