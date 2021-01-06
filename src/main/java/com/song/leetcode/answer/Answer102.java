@@ -1,6 +1,9 @@
 package com.song.leetcode.answer;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * @ClassName Answer102
@@ -12,7 +15,31 @@ import java.util.List;
 public class Answer102 {
 
     public List<List<Integer>> levelOrder(TreeNode root) {
-        return null;
+
+        List<List<Integer>> res = new ArrayList<>();
+
+        if (root == null){
+            return res;
+        }
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.offer(root);
+        while (!queue.isEmpty()){
+            List<Integer> level = new ArrayList<>();
+            int size = queue.size();
+            for (int i = 0;i<size;i++){
+                TreeNode node = queue.poll();
+                level.add(node.val);
+                if (node.left != null){
+                    queue.offer(node.left);
+                }
+                if (node.right != null){
+                    queue.offer(node.right);
+                }
+
+            }
+            res.add(level);
+        }
+        return res;
     }
 }
 /***
