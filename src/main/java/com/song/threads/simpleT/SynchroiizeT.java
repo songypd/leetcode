@@ -1,4 +1,4 @@
-package com.song.threads;
+package com.song.threads.simpleT;
 
 public class SynchroiizeT {
 

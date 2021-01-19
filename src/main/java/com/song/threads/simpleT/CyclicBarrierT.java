@@ -1,4 +1,4 @@
-package com.song.threads;
+package com.song.threads.simpleT;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

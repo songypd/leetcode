@@ -1,4 +1,4 @@
-package com.song.threads;
+package com.song.threads.lockT;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;

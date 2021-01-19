@@ -1,4 +1,4 @@
-package com.song.threads;
+package com.song.threads.simpleT;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
