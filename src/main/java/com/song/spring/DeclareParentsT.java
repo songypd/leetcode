@@ -1,4 +1,4 @@
-package com.song.customeraop;
+package com.song.spring;
 
 import com.song.listener.TestListener;
 import org.aspectj.lang.annotation.DeclareParents;
