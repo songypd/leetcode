@@ -1,6 +1,5 @@
-package com.song.spring;
+package com.song.spring.declareparents;
 
-import com.song.listener.TestListener;
 import org.aspectj.lang.annotation.DeclareParents;
 
 /**
@@ -12,6 +11,6 @@ import org.aspectj.lang.annotation.DeclareParents;
 
 public class DeclareParentsT {
 
-    @DeclareParents(value = "testListener",defaultImpl =com.song.listener.TestListener.class)
-    private TestListener testListener;
+    @DeclareParents(value = "com.song.listener.*",defaultImpl=com.song.spring.declareparents.ListenServiceImpl.class)
+    private ListenService listenService;
 }

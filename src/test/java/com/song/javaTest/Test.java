@@ -1,4 +1,4 @@
-package com.song;
+package com.song.javaTest;
 
 import com.alibaba.fastjson.JSON;
 
